@@ -9,7 +9,7 @@ public class DepthSearch {
         WHITE,GREY,BLACK
     };
     private static int time=0;
-    public static void Search(Graph g,int pred[],int [] discovered,int [] finished){
+    public static void search(Graph g,int pred[],int [] discovered,int [] finished){
         int vertices=g.vertices;
         VertexColor [] color=new VertexColor[vertices];
         for(int i=0;i<vertices;i++){
@@ -19,12 +19,12 @@ public class DepthSearch {
         time=0;
         for(int i=0;i<vertices;i++){
             if(color[i]==VertexColor.WHITE){
-                DepthSearchVisit(g,i,pred, discovered, finished, color);
+                depthSearchVisit(g,i,pred, discovered, finished, color);
             }
         }
 
     }
-    private static void DepthSearchVisit(Graph g,int u,int pred[],int [] discovered,int [] finished,VertexColor [] color){
+    private static void depthSearchVisit(Graph g,int u,int pred[],int [] discovered,int [] finished,VertexColor [] color){
         time+=1;
         discovered[u]=time;
         color[u]=VertexColor.GREY;
@@ -34,7 +34,7 @@ public class DepthSearch {
             if(color[v]==VertexColor.WHITE){
                 pred[v]=u;
                 System.out.println("Tree: ("+u+","+v+")");
-                DepthSearchVisit(g, v, pred, discovered, finished, color);
+                depthSearchVisit(g, v, pred, discovered, finished, color);
             }
             else if(color[v]==VertexColor.GREY){
                 System.out.println("Back: ("+u+","+v+")");

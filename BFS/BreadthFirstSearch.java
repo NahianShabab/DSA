@@ -10,7 +10,7 @@ public class BreadthFirstSearch {
          WHITE,BLACK,GREY
     };
 
-    public static void Search(Graph g,int s,int [] pred, VertexColor [] color,int dist[]){
+    public static void search(Graph g,int s,int [] pred, VertexColor [] color,int dist[]){
         int vertices=g.vertices;
         for(int i=0;i<vertices;i++){
             pred[i]=-1;

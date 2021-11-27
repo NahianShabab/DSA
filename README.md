@@ -6,6 +6,9 @@
 #### ____UndirectedGraph
 #### ____DirectedGraph
 
+### 2. Disjoint Set
+#### ____Disjoint Set using Linked List
+
 
 ## B. Implemented Algorithms
 ### 1. Breadth First Search 
